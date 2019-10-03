@@ -31,7 +31,7 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: Lato, sans-serif;
+  font-family: Roboto, Lato, sans-serif;
   margin: 0;
 }
 
@@ -243,20 +243,20 @@ p {
 }
 
 
-.c-footer {
-  background-color: rgba(0, 0, 0, .4);
-  bottom: 0;
-  color: #fafafa;
-  font-size: 1.6rem;
-  padding: 0;
-  position: fixed;
-  width: 100%;
-  z-index: 10;
+// .c-footer {
+//   background-color: rgba(0, 0, 0, .4);
+//   bottom: 0;
+//   color: #fafafa;
+//   font-size: 1.6rem;
+//   padding: 0;
+//   position: fixed;
+//   width: 100%;
+//   z-index: 10;
 
-  &__content {
-    height: 100%;
-  }
-}
+//   &__content {
+//     height: 100%;
+//   }
+// }
 
 .c-btn--change-lang {
   &:hover {
@@ -325,6 +325,7 @@ p {
     justify-content: center !important;
     align-items: center !important;
   }
+
   &--middle {
     align-items: center !important;
   }
@@ -439,11 +440,25 @@ p {
 }
 
 .c-spinner--height {
-  &-6  { height:  6rem!important;}
-  &-7  { height:  7rem!important;}
-  &-8  { height:  8rem!important;}
-  &-9  { height:  9rem!important;}
-  &-10 { height: 10rem!important;}
+  &-6 {
+    height: 6rem !important;
+  }
+
+  &-7 {
+    height: 7rem !important;
+  }
+
+  &-8 {
+    height: 8rem !important;
+  }
+
+  &-9 {
+    height: 9rem !important;
+  }
+
+  &-10 {
+    height: 10rem !important;
+  }
 }
 
 
@@ -470,24 +485,24 @@ p {
 }
 
 .c-text-field--add-on-no-label .c-text-field__add-on {
-  top: 4px!important;
+  top: 4px !important;
 }
 
 .c-menu__items {
-  max-height: 350px!important;
+  max-height: 350px !important;
 }
 
 
 .u-display-inline {
-  display: inline-block!important;
+  display: inline-block !important;
 }
 
 .mat-calendar-body-cell-content {
-  border-radius: .3rem!important;
+  border-radius: .3rem !important;
 }
 
 .mat-calendar-body-selected {
-  background-color: #1565C0!important;
+  background-color: #1565C0 !important;
 }
 
 p {
@@ -499,8 +514,13 @@ p {
 }
 
 .u-cursor {
-  &-help { cursor: help!important; }
-  &-default { cursor: default!important; }
+  &-help {
+    cursor: help !important;
+  }
+
+  &-default {
+    cursor: default !important;
+  }
 }
 
 .c-table__cell--no-ellipsis {
@@ -508,4 +528,37 @@ p {
   white-space: initial;
   overflow: auto;
   line-height: 1.5;
+}
+
+
+.c-section {
+  &__header {
+    position: relative;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: normal;
+    }
+
+    &:after {
+      content: "";
+      display: block;
+      border-bottom: solid 3px #1565C0;
+      width: 56px;
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+    }
+  }
+
+  &__body {
+    white-space: pre-line;
+  }
+}
+
+.c-footer {
 }

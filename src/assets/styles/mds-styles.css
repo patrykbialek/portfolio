@@ -7,7 +7,7 @@
 
 body,
 html {
-  font-family: Lato, sans-serif;
+  font-family: Roboto, sans-serif;
   background-color: #fafafa;
   color: #424242;
   -webkit-font-smoothing: antialiased;
@@ -348,7 +348,7 @@ img[width] {
   padding-left: 24px;
   margin-right: auto;
   margin-left: auto;
-  max-width: 1280px
+  max-width: 1024px
 }
 
 .o-wrapper:after {
@@ -3512,7 +3512,7 @@ pre.c-message--icon:before {
   bottom: 100%;
   color: #fafafa;
   content: attr(tooltip-text);
-  font-family: Lato, sans-serif;
+  font-family: Roboto, sans-serif;
   font-size: 1.4rem;
   line-height: 1.5;
   margin: auto;
