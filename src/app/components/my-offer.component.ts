@@ -2,14 +2,13 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-my-offer',
-  template: `
-    <p>
-      my-offer works!
-    </p>
-  `,
+  templateUrl: './my-offer.component.html',
   styles: []
 })
 export class MyOfferComponent implements OnInit {
+
+  title = 'Co oferuję';
+  description = `Moja oferta`;
 
   constructor() { }
 
