@@ -326,8 +326,16 @@ p {
     align-items: center !important;
   }
 
-  &--middle {
+  &--center {
     align-items: center !important;
+  }
+
+  &--middle {
+    justify-content: center !important;
+  }
+
+  &--column {
+    flex-direction: column;
   }
 }
 
