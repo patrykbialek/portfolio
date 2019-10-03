@@ -348,7 +348,7 @@ img[width] {
   padding-left: 24px;
   margin-right: auto;
   margin-left: auto;
-  max-width: 1024px
+  max-width: 960px
 }
 
 .o-wrapper:after {
@@ -1731,6 +1731,10 @@ a:focus {
 
 .u-align-right {
   justify-content: flex-end
+}
+
+.u-align-left {
+  justify-content: flex-start
 }
 
 .u-align-right [class*=c-btn]:last-child {
