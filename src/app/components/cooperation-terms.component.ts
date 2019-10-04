@@ -41,7 +41,7 @@ export class CooperationTermsComponent implements OnInit {
         title: 'Rate'
       },
       title: 'Stawka',
-      subTitle: '120 PLN / h'
+      subTitle: 'Od 120 PLN / h'
     },
     {
       image: {
