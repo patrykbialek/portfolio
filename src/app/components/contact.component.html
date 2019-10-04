@@ -3,10 +3,12 @@
     <h2>{{ title }}</h2>
   </header>
 
-  <section class="u-margin-bottom-huge">
+  <section
+    [ngClass]="{ 'u-margin-bottom-huge': !isMobileWidth, 'u-margin-bottom': isMobileWidth }">
     <div class="o-grid">
       <ng-container *ngFor="let contactItem of contact">
-        <div class="o-grid__cell u-1/2 u-margin-top u-margin-bottom-large">
+        <div class="o-grid__cell u-margin-top"
+          [ngClass]="{ 'u-1/2 u-margin-bottom-large': !isMobileWidth, 'u-1/1 u-margin-bottom': isMobileWidth }">
           <div class="o-grid u-flex u-align-left u-align-center">
             <div class="o-grid__cell u-1/4 u-flex u-align-center u-align-left">
               <img src="assets/images/svg/{{ contactItem.image.fileName }}.svg"
