@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { fadeAnimation } from './animations/fade.animation';
 import { trigger, transition, state, style, animate } from '@angular/animations';
 
@@ -41,6 +41,16 @@ export class AppComponent implements OnInit {
   isIntroShown = true;
   isMobileWidth: boolean;
 
+  // height = 2000;
+  width = window.innerWidth - 40;
+  marginLeft = 0;
+  y = 100;
+  oldY = 0;
+  oldX = 0;
+  grabber = false;
+
+  initialInnerWidth = window.innerWidth;
+
   ngOnInit() {
     this.resizeWindow(window.innerWidth);
     setTimeout(() => {
@@ -53,11 +63,55 @@ export class AppComponent implements OnInit {
     this.resizeWindow(event.target.innerWidth);
   }
 
+  @HostListener('document:touchmove', ['$event'])
+  @HostListener('document:mousemove', ['$event'])
+  onMouseMove(event: MouseEvent) {
+    if (!this.grabber) {
+      return;
+    }
+    this.resizerX(event.clientX - this.oldX);
+    this.oldX = event.clientX;
+  }
+
+  @HostListener('document:touchend', ['$event'])
+  @HostListener('document:mouseup', ['$event'])
+  onMouseUp(event: MouseEvent) {
+    this.grabber = false;
+  }
+
+  @HostListener('document:touchstart', ['$event'])
+  @HostListener('document:mousedown', ['$event'])
+  onMouseDown(event: MouseEvent) {
+    this.grabber = true;
+    this.oldY = event.clientY;
+    this.oldX = event.clientX;
+  }
+
+
+  resizerX(offsetX: number) {
+    this.width += offsetX;
+
+    if (this.width > this.initialInnerWidth - 30) {
+      this.width = window.innerWidth - 40;
+      return;
+    }
+
+    if (this.width < 30) {
+      this.width = 40;
+      return;
+    }
+
+  }
+
   private resizeWindow(innerWidth: any): void {
+    this.marginLeft = ((window.innerWidth - 960) / 2);
+    this.width = window.innerWidth - 40;
+
     if (innerWidth <= 1000) {
       this.isMobileWidth = true;
     } else {
       this.isMobileWidth = false;
     }
   }
+
 }
