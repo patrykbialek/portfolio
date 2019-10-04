@@ -17,7 +17,8 @@ export class ContactComponent implements OnInit {
         title: 'Email'
       },
       title: 'Email',
-      subTitle: 'patryk.b@me.com'
+      subTitle: 'patryk.b@me.com',
+      type: 'email',
     },
     {
       image: {
@@ -25,7 +26,8 @@ export class ContactComponent implements OnInit {
         title: 'Phone'
       },
       title: 'Telefon',
-      subTitle: '+48 510 217 852'
+      subTitle: '+48 510 217 852',
+      type: 'phone'
     },
   ];
 

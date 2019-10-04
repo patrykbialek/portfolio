@@ -19,7 +19,10 @@
                 <h5>{{ contactItem.title }}</h5>
               </header>
               <ul class="u-text-gray-700">
-                <div class="u-margin-bottom-tiny" style="margin-left: -24px">{{ contactItem.subTitle }}</div>
+                <a href="tel:+48510217852" class="u-text-info u-margin-bottom-tiny" style="margin-left: -24px"
+                  *ngIf="contactItem.type === 'phone'">{{ contactItem.subTitle }}</a>
+                <a href="mailto:patryk.b@me.com" class="u-text-info u-margin-bottom-tiny" style="margin-left: -24px"
+                  *ngIf="contactItem.type === 'email'">{{ contactItem.subTitle }}</a>
               </ul>
             </div>
           </div>
