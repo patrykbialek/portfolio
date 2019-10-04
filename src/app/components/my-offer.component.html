@@ -6,10 +6,12 @@
   <ng-container *ngFor="let myOfferItem of myOffer">
     <section class="u-margin-bottom-huge">
       <div class="o-grid">
-        <div class="o-grid__cell u-1/4 u-flex u-align-center u-align-left">
+        <div class="o-grid__cell u-flex u-align-center"
+          [ngClass]="{ 'u-1/4 u-align-left': !isMobileWidth, 'u-1/1 u-align-center u-margin-bottom': isMobileWidth}">
           <img src="assets/images/svg/{{ myOfferItem.image.fileName }}.svg" alt="{{ myOfferItem.image.title }}">
         </div>
-        <div class="o-grid__cell u-3/4">
+        <div class="o-grid__cell"
+          [ngClass]="{ 'u-3/4': !isMobileWidth, 'u-1/1': isMobileWidth}">
           <header class="u-margin-bottom-small">
             <h5>{{ myOfferItem.title }}</h5>
           </header>

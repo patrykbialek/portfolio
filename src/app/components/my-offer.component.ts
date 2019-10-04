@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-my-offer',
@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyOfferComponent implements OnInit {
 
+  isMobileWidth: boolean;
   title = 'Co oferuję';
-  description = `Moja oferta`;
 
   myOffer = [
     {
@@ -107,11 +107,21 @@ export class MyOfferComponent implements OnInit {
     },
   ];
 
-
-
-  constructor() { }
-
   ngOnInit() {
+    this.resizeFooter(window.innerWidth);
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.resizeFooter(event.target.innerWidth);
+  }
+
+  private resizeFooter(innerWidth: any): void {
+    if (innerWidth <= 500) {
+      this.isMobileWidth = true;
+    } else {
+      this.isMobileWidth = false;
+    }
   }
 
 }

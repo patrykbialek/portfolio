@@ -3,16 +3,20 @@
     <h2>{{ title }}</h2>
   </header>
 
-  <section class="u-margin-bottom-huge">
+  <section
+    [ngClass]="{ 'u-margin-bottom-huge': !isMobileWidth, 'u-margin-bottom': isMobileWidth }">
     <div class="o-grid">
       <ng-container *ngFor="let cooperationTermsItem of cooperationTerms">
-        <div class="o-grid__cell u-1/2 u-margin-top u-margin-bottom-large">
+        <div class="o-grid__cell u-margin-top"
+          [ngClass]="{ 'u-1/2 u-margin-bottom-large': !isMobileWidth, 'u-1/1 u-margin-bottom': isMobileWidth }">
           <div class="o-grid u-flex u-align-left u-align-center">
-            <div class="o-grid__cell u-1/4 u-flex u-align-center u-align-left">
+            <div class="o-grid__cell u-1/4 u-flex u-align-center u-align-left"
+              *ngIf="!isMobileWidth1">
               <img src="assets/images/svg/{{ cooperationTermsItem.image.fileName }}.svg"
                 alt="{{ cooperationTermsItem.image.title }}">
             </div>
-            <div class="o-grid__cell u-3/4 u-flex u-flex--middle u-flex--column">
+            <div class="o-grid__cell u-3/4 u-flex u-flex--middle u-flex--column"
+              [ngClass]="{ 'u-1/1': isMobileWidth }">
               <header class="u-margin-bottom-small">
                 <h5>{{ cooperationTermsItem.title }}</h5>
               </header>
