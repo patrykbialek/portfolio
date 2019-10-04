@@ -1,13 +1,19 @@
 <section class="c-footer u-text-small u-text-gray-700 u-border-top u-padding-bottom-small u-padding-top-small">
   <div class="o-grid o-grid--flush">
-    <div class="o-grid__cell u-1/1@mobile u-1/2@tablet u-padding-bottom-tiny">
+    <div class="o-grid__cell u-1/1@mobile u-1/2@tablet">
       <span class="u-margin-right">&copy; {{ year }} Patryk Białek</span>
       <span>NIP 796-218-52-07</span>
     </div>
-    <div class="o-grid__cell u-1/1@mobile u-1/2@tablet u-padding-bottom-tiny"
+    <div class="o-grid__cell u-1/1@mobile u-1/2@tablet"
       [ngClass]="{ 'o-block o-block--right': !footerWith2Lines }">
       <span>Designed with &hearts; in Warsaw</span>
       <!-- <span class="u-margin-left">Aktualizacja {{ updateDate }}</span> -->
     </div>
   </div>
+</section>
+
+<section class="o-block" [ngClass]="{ 'o-block--right': !footerWith2Lines, 'o-block--left': footerWith2Lines}">
+  <div>Icons made by <a class="u-text-info" href="https://www.flaticon.com/authors/becris" title="Becris">Becris</a>
+    from
+    <a class="u-text-info" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 </section>
