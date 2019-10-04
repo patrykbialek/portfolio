@@ -558,12 +558,13 @@ p {
 
     &:after {
       content: "";
+      bottom: -8px;
+      border: solid 2px #1976D2;
+      border-radius: .3rem;
       display: block;
-      border-bottom: solid 3px #1565C0;
-      width: 56px;
+      left: 1px;
       position: absolute;
-      left: 0;
-      bottom: -6px;
+      width: 56px;
     }
   }
 
