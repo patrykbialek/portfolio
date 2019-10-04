@@ -32,15 +32,15 @@ export class ContactComponent implements OnInit {
   ];
 
   ngOnInit() {
-    this.resizeFooter(window.innerWidth);
+    this.resizeWindow(window.innerWidth);
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.resizeFooter(event.target.innerWidth);
+    this.resizeWindow(event.target.innerWidth);
   }
 
-  private resizeFooter(innerWidth: any): void {
+  private resizeWindow(innerWidth: any): void {
     if (innerWidth <= 500) {
       this.isMobileWidth = true;
     } else {

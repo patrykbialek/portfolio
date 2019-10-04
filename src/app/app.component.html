@@ -1,4 +1,4 @@
-<main class="o-wrapper">
+<main class="o-wrapper" [@mainFadeAnimation]="'in'">
   <app-header></app-header>
   <app-about-me></app-about-me>
   <app-my-offer></app-my-offer>
@@ -6,3 +6,15 @@
   <app-contact></app-contact>
   <app-footer></app-footer>
 </main>
+
+<aside *ngIf="!isMobileWidth" [@asideFadeAnimation]="'in'">
+  <img class="c-background c-background__one" src="assets/images/svg/background_1.svg" alt="background1">
+  <img class="c-background c-background__two" src="assets/images/svg/background_2.svg" alt="background2">
+  <img class="c-background c-background__three" src="assets/images/svg/background_3.svg" alt="background3">
+  <img class="c-background c-background__four" src="assets/images/svg/background_4.svg" alt="background4">
+  <img class="c-background c-background__five" src="assets/images/svg/background_5.svg" alt="background5">
+</aside>
+
+<div class="c-intro" *ngIf="isIntroShown" [@introFadeAnimation]="'in'">
+  <img src="assets/images/svg/intro.svg" alt="intro">
+</div>
