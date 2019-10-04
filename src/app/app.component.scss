@@ -1,0 +1,28 @@
+.c-background {
+  position: absolute;
+
+  &__one {
+    top: 0;
+    left: -32px;
+  }
+
+  &__two {
+    top: 500px;
+    right: -32px;
+  }
+
+  &__three {
+    top: 950px;
+    left: -32px;
+  }
+
+  &__four {
+    top: 1500px;
+    right: -32px;
+  }
+
+  &__five {
+    top: 2300px;
+    right: -32px;
+  }
+}
