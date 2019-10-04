@@ -11,7 +11,7 @@ import { trigger, transition, state, style, animate } from '@angular/animations'
       state('in', style({ opacity: 1 })),
       transition(':enter', [
         style({ opacity: 0 }),
-        animate('800ms 2000ms')
+        animate('800ms')
       ]),
       transition(':leave',
         animate(600, style({ opacity: 0 })))
@@ -20,7 +20,7 @@ import { trigger, transition, state, style, animate } from '@angular/animations'
       state('in', style({ opacity: 1 })),
       transition(':enter', [
         style({ opacity: 0 }),
-        animate('1500ms 2000ms')
+        animate('1200ms 500ms')
       ]),
       transition(':leave',
         animate(300, style({ opacity: 0 })))
