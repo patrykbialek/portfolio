@@ -25,7 +25,7 @@ export class MyOfferComponent implements OnInit {
         },
         {
           title: 'Zbadać',
-          subTitle: 'poznać środowisko, konkurencje, trendy',
+          subTitle: 'poznać środowisko, konkurencję, trendy',
         },
         {
           title: 'Naszkicować',
