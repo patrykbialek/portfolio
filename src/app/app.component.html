@@ -1,4 +1,4 @@
-<aside *ngIf="!isMobileWidth" [@asideFadeAnimation]="'in'">
+<aside class="" *ngIf="!isMobileWidth" [@asideFadeAnimation]="'in'">
   <img class="c-background c-background__one u-noselect" src="assets/images/svg/background_1.svg" alt="background1">
   <img class="c-background c-background__two u-noselect" src="assets/images/svg/background_2.svg" alt="background2">
   <img class="c-background c-background__three u-noselect" src="assets/images/svg/background_3.svg" alt="background3">
@@ -23,6 +23,7 @@
   </section>
 
   <span class="c-english-label u-text-normal u-noselect">EN</span>
+
 </main>
 
 <main class="c-pane c-pane--pl" [style.width.px]='width' #pane>
@@ -35,7 +36,6 @@
     <app-footer></app-footer>
 
     <ng-container *ngIf="!isMobileWidth">
-      <!-- <img class="c-grab-move" src="assets/images/svg/drag_move.svg" alt="grab and move"> -->
       <img class="c-grab-move c-grab-move__icon" src="assets/images/svg/drag_indicator-24px.svg" alt="grab and move">
     </ng-container>
     <ng-container *ngIf="isMobileWidth">
