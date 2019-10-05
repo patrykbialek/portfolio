@@ -449,7 +449,9 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    this.resizeWindow(event.target.innerWidth);
+    if (!this.isMobileWidth) {
+      this.resizeWindow(event.target.innerWidth);
+    }
   }
 
   @HostListener('document:touchmove', ['$event'])
