@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-contact',
@@ -10,26 +10,7 @@ export class ContactComponent implements OnInit {
   isMobileWidth: boolean;
   title = 'Kontakt';
 
-  contact = [
-    {
-      image: {
-        fileName: 'contact_email',
-        title: 'Email'
-      },
-      title: 'Email',
-      subTitle: 'patryk.b@me.com',
-      type: 'email',
-    },
-    {
-      image: {
-        fileName: 'contact_phone',
-        title: 'Phone'
-      },
-      title: 'Telefon',
-      subTitle: '+48 510 217 852',
-      type: 'phone'
-    },
-  ];
+  @Input() contact;
 
   ngOnInit() {
     this.resizeWindow(window.innerWidth);

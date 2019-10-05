@@ -1,9 +1,9 @@
 <section class="c-section u-margin-bottom-huge">
   <header class="c-section__header u-margin-bottom">
-    <h2>{{ title }}</h2>
+    <h2>{{ myOffer.title }}</h2>
   </header>
 
-  <ng-container *ngFor="let myOfferItem of myOffer">
+  <ng-container *ngFor="let myOfferItem of myOffer.offers">
     <section class="u-margin-bottom-huge">
       <div class="o-grid">
         <div class="o-grid__cell u-flex u-align-center"

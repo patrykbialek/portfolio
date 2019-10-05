@@ -1,12 +1,12 @@
 <section class="c-section u-margin-bottom-huge">
   <header class="c-section__header u-margin-bottom">
-    <h2>{{ title }}</h2>
+    <h2>{{ contact.title }}</h2>
   </header>
 
   <section
     [ngClass]="{ 'u-margin-bottom-huge': !isMobileWidth, 'u-margin-bottom': isMobileWidth }">
     <div class="o-grid">
-      <ng-container *ngFor="let contactItem of contact">
+      <ng-container *ngFor="let contactItem of contact.items">
         <div class="o-grid__cell u-margin-top"
           [ngClass]="{ 'u-1/2 u-margin-bottom-large': !isMobileWidth, 'u-1/1 u-margin-bottom': isMobileWidth }">
           <div class="o-grid u-flex u-align-left u-align-center">
