@@ -20,10 +20,19 @@ import { trigger, transition, state, style, animate } from '@angular/animations'
       state('in', style({ opacity: 1 })),
       transition(':enter', [
         style({ opacity: 0 }),
-        animate('800ms 500ms')
+        animate('800ms')
       ]),
       transition(':leave',
         animate(300, style({ opacity: 0 })))
+    ]),
+    trigger('grow', [
+      transition(':enter', [   // :enter is alias to 'void => *'
+        style({ width: '0' }),
+        animate(500, style({ width: '*' }))
+      ]),
+      transition(':leave', [   // :leave is alias to '* => void'
+        animate(500, style({ width: 0 }))
+      ])
     ]),
   ]
 })
@@ -39,6 +48,12 @@ export class AppComponent implements OnInit {
   grabber = false;
 
   initialInnerWidth = window.innerWidth;
+
+  isEnLabel = true;
+
+  isShown: boolean;
+  isBackAnimation = false;
+  isForwardAnimation = false;
 
   aboutMe = {
     en: {
@@ -462,18 +477,49 @@ export class AppComponent implements OnInit {
       this.width = 40;
       return;
     }
+
+    if (this.width < this.initialInnerWidth - 300) {
+      this.isEnLabel = false;
+    } else {
+      this.isEnLabel = true;
+    }
+
+    if (this.width >= this.initialInnerWidth - 50) {
+      this.isForwardAnimation = true;
+    } else {
+      this.isForwardAnimation = false;
+    }
   }
 
   onChangeLanguageToEn() {
     this.width = 0;
   }
+
   onChangeLanguageToPl() {
     this.width = window.innerWidth;
+  }
+
+  onShowResizeOption(): void {
+    this.isShown = true;
+    this.isBackAnimation = true;
+
+    if (this.width === this.initialInnerWidth - 50) {
+      this.width = this.initialInnerWidth - 100;
+    }
+
+    setTimeout(() => {
+      this.width = this.initialInnerWidth - 50;
+    }, 150);
+
+    setTimeout(() => {
+      this.isBackAnimation = false;
+    }, 500);
   }
 
   private resizeWindow(innerWidth: any): void {
     this.marginLeft = ((window.innerWidth - 960) / 2);
     this.width = window.innerWidth - 50;
+    this.initialInnerWidth = window.innerWidth;
 
     if (innerWidth <= 1000) {
       this.isMobileWidth = true;

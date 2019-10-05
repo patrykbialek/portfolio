@@ -7,7 +7,9 @@
 </aside>
 
 <main class="c-pane c-pane--en" #english>
-  <section class="c-content o-wrapper1 u-noselect" [style.margin-left.px]='marginLeft' [@mainFadeAnimation]="'in'">
+  <section class="c-content o-wrapper1 u-noselect"
+    [style.margin-left.px]='marginLeft'
+    [@mainFadeAnimation]="'in'">
     <app-header></app-header>
     <app-about-me [aboutMe]="aboutMe.en"></app-about-me>
     <app-my-offer [myOffer]="myOffer.en"></app-my-offer>
@@ -22,11 +24,16 @@
     </ng-container>
   </section>
 
-  <span class="c-english-label u-text-normal u-noselect">EN</span>
+  <a role="button" class="c-change-lang-trigger u-text-normal u-noselect"
+    (click)="onShowResizeOption()">{{ isEnLabel ? 'EN' : 'PL' }}</a>
 
 </main>
 
-<main class="c-pane c-pane--pl" [style.width.px]='width' #pane>
+<main class="c-pane c-pane--pl"
+  [ngClass]="{ 'c-isShown': isShown,
+               'u-forward-animation': isForwardAnimation,
+               'u-back-animation': isBackAnimation }"
+  [style.width.px]='width'>
   <section class="c-content o-wrapper1 u-noselect" [style.margin-left.px]='marginLeft' [@mainFadeAnimation]="'in'">
     <app-header></app-header>
     <app-about-me [aboutMe]="aboutMe.pl"></app-about-me>
@@ -49,3 +56,6 @@
   <div class="c-grabber"></div>
 
 </main>
+
+<div class="c-overlay" [style.width.px]='width - 25'></div>
+<div class="c-overlay c-overlay--small" [style.width.px]='width'></div>

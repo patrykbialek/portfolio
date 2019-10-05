@@ -1,31 +1,38 @@
 .c-background {
   $left: 0;
+  $zIndex: 999;
+
   position: absolute;
   z-index: 100000;
 
   &__one {
     top: 0;
     left: $left;
+    z-index: $zIndex;
   }
 
   &__two {
     top: 500px;
     right: $left;
+    z-index: $zIndex;
   }
 
   &__three {
     top: 950px;
     left: $left;
+    z-index: $zIndex;
   }
 
   &__four {
     top: 1500px;
     right: $left;
+    z-index: $zIndex;
   }
 
   &__five {
     top: 2300px;
     right: $left;
+    z-index: $zIndex;
   }
 }
 
@@ -56,11 +63,18 @@
     background: #EEEEEE;
     width: 100%;
   }
+
   &--pl {
     background: #fafafa;
     box-shadow: rgb(136, 136, 136) 5px 0px 5px -5px;
     width: 90%;
   }
+}
+.u-forward-animation {
+  transition: width 50ms ease-in-out;
+}
+.u-back-animation {
+  transition: width 300ms ease-in-out;
 }
 
 .c-grabber {
@@ -70,7 +84,7 @@
   right: 0;
   bottom: 0;
   cursor: ew-resize;
-  width: 15px;
+  width: 30px;
   overflow: hidden;
   background-image: url('https://cdn.sstatic.net/Sites/stackoverflow/img/sprites.svg'), none;
   background-position: 210px -364px;
@@ -89,11 +103,25 @@
   }
 }
 
-.c-english-label {
+.c-change-lang-trigger {
   color: #1565C0;
   position: fixed;
   right: 16px;
   top: 173px;
+}
+
+.c-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: transparent;
+  z-index: 1001;
+
+  &--small {
+    cursor: ew-resize;
+    z-index: 1000;
+  }
 }
 
 .u-noselect {
