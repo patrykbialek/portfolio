@@ -491,7 +491,9 @@ export class AppComponent implements OnInit {
       return;
     }
 
-    this.toggleIsEnLabel();
+    if (!this.isMobileWidth) {
+      this.toggleIsEnLabel();
+    }
 
     if (this.width >= this.initialInnerWidth - 50) {
       this.isForwardAnimation = true;
