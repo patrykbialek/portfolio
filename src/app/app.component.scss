@@ -29,18 +29,6 @@
   }
 }
 
-.c-intro {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  position: fixed;
-  left: 0;
-  top: 0;
-}
-
 .c-content {
   overflow: hidden;
   width: 960px;
@@ -50,7 +38,6 @@
 
 .c-pane {
   position: absolute;
-  width: 90%;
   top: 0;
   left: 0;
 
@@ -64,25 +51,19 @@
   padding-left: 0;
 
   box-shadow: rgb(136, 136, 136) 5px 0px 5px -5px;
+
+  &--en {
+    background: #EEEEEE;
+    width: 100%;
+  }
+  &--pl {
+    background: #fafafa;
+    box-shadow: rgb(136, 136, 136) 5px 0px 5px -5px;
+    width: 90%;
+  }
 }
 
-.c-english {
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-
-  margin: 0;
-  padding: 0;
-  z-index: 99;
-  background: #EEEEEE;
-
-  white-space: wrap;
-  overflow: hidden;
-  padding-left: 0;
-}
-
-.grabber {
+.c-grabber {
   content: '';
   position: absolute;
   top: 0;
@@ -106,6 +87,13 @@
     top: 174px;
     right: 2px;
   }
+}
+
+.c-english-label {
+  color: #1565C0;
+  position: fixed;
+  right: 16px;
+  top: 173px;
 }
 
 .u-noselect {

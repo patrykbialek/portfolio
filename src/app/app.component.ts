@@ -20,16 +20,7 @@ import { trigger, transition, state, style, animate } from '@angular/animations'
       state('in', style({ opacity: 1 })),
       transition(':enter', [
         style({ opacity: 0 }),
-        animate('1200ms 500ms')
-      ]),
-      transition(':leave',
-        animate(300, style({ opacity: 0 })))
-    ]),
-    trigger('introFadeAnimation', [
-      state('in', style({ opacity: 1 })),
-      transition(':enter', [
-        style({ opacity: 0 }),
-        animate('100ms')
+        animate('800ms 500ms')
       ]),
       transition(':leave',
         animate(300, style({ opacity: 0 })))
@@ -40,8 +31,7 @@ export class AppComponent implements OnInit {
 
   isMobileWidth: boolean;
 
-  // height = 2000;
-  width = window.innerWidth - 40;
+  width = window.innerWidth - 50;
   marginLeft = 0;
   y = 100;
   oldY = 0;
@@ -272,6 +262,115 @@ export class AppComponent implements OnInit {
     },
   };
 
+  cooperationTerms = {
+    en: {
+      title: 'Form of cooperation',
+      items: [
+        {
+          image: {
+            fileName: 'cooperation_work',
+            title: 'Work'
+          },
+          title: 'Type of work',
+          subTitle: 'Remotely'
+        },
+        {
+          image: {
+            fileName: 'cooperation_meetings',
+            title: 'Meetings'
+          },
+          title: 'Meetings',
+          subTitle: 'Skype or on-site in Warsaw'
+        },
+        {
+          image: {
+            fileName: 'cooperation_settlement',
+            title: 'Settlement'
+          },
+          title: 'Form of settlement',
+          subTitle: 'B2B - no VAT invoice'
+        },
+        {
+          image: {
+            fileName: 'cooperation_rate',
+            title: 'Rate'
+          },
+          title: 'Rate',
+          subTitle: 'From 120 PLN / h'
+        },
+        {
+          image: {
+            fileName: 'cooperation_availablility',
+            title: 'Availablility'
+          },
+          title: 'Availablility',
+          subTitle: '20 h / week'
+        },
+        {
+          image: {
+            fileName: 'cooperation_remarks',
+            title: 'Remarks'
+          },
+          title: 'Remarks',
+          subTitle: 'From December 2019, I start a full-time long-term cooperation'
+        },
+      ]
+    },
+    pl: {
+      title: 'Forma współpracy',
+      items: [
+        {
+          image: {
+            fileName: 'cooperation_work',
+            title: 'Work'
+          },
+          title: 'Tryb pracy',
+          subTitle: 'Zdalnie'
+        },
+        {
+          image: {
+            fileName: 'cooperation_meetings',
+            title: 'Meetings'
+          },
+          title: 'Spotkania',
+          subTitle: 'Skype lub osobiście na terenie Warszawy'
+        },
+        {
+          image: {
+            fileName: 'cooperation_settlement',
+            title: 'Settlement'
+          },
+          title: 'Forma rozliczenia',
+          subTitle: 'B2B - faktura bez VAT'
+        },
+        {
+          image: {
+            fileName: 'cooperation_rate',
+            title: 'Rate'
+          },
+          title: 'Stawka',
+          subTitle: 'Od 120 PLN / h'
+        },
+        {
+          image: {
+            fileName: 'cooperation_availablility',
+            title: 'Availablility'
+          },
+          title: 'Dostępność',
+          subTitle: '20 h / tydzień'
+        },
+        {
+          image: {
+            fileName: 'cooperation_remarks',
+            title: 'Remarks'
+          },
+          title: 'Uwagi',
+          subTitle: 'Od grudnia 2019 rozpoczynam dłuższą współpracę w pełnym wymiarze'
+        },
+      ]
+    }
+  };
+
   contact = {
     pl: {
       title: 'Kontakt',
@@ -354,12 +453,12 @@ export class AppComponent implements OnInit {
   resizerX(offsetX: number) {
     this.width += offsetX;
 
-    if (this.width > this.initialInnerWidth - 30) {
-      this.width = window.innerWidth - 40;
+    if (this.width > this.initialInnerWidth - 49) {
+      this.width = window.innerWidth - 50;
       return;
     }
 
-    if (this.width < 30) {
+    if (this.width < 39) {
       this.width = 40;
       return;
     }
@@ -374,14 +473,14 @@ export class AppComponent implements OnInit {
 
   private resizeWindow(innerWidth: any): void {
     this.marginLeft = ((window.innerWidth - 960) / 2);
-    this.width = window.innerWidth - 40;
+    this.width = window.innerWidth - 50;
 
     if (innerWidth <= 1000) {
       this.isMobileWidth = true;
       this.width = window.innerWidth;
     } else {
       this.isMobileWidth = false;
-      this.width = window.innerWidth - 40;
+      this.width = window.innerWidth - 50;
     }
   }
 
