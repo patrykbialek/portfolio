@@ -6,33 +6,44 @@
   <img class="c-background c-background__five u-noselect" src="assets/images/svg/background_5.svg" alt="background5">
 </aside>
 
- <main class="c-english" #english>
-   <section class="c-content o-wrapper1 u-noselect" [style.margin-left.px]='marginLeft' [@mainFadeAnimation]="'in'">
-     <app-header></app-header>
-     <app-about-me [aboutMe]="aboutMe.en"></app-about-me>
-     <app-my-offer [myOffer]="myOffer.en"></app-my-offer>
-     <app-cooperation-terms></app-cooperation-terms>
-     <app-contact [contact]="contact.en"></app-contact>
-     <app-footer></app-footer>
-   </section>
- </main>
+<main class="c-english" #english>
+  <section class="c-content o-wrapper1 u-noselect" [style.margin-left.px]='marginLeft' [@mainFadeAnimation]="'in'">
+    <app-header></app-header>
+    <app-about-me [aboutMe]="aboutMe.en"></app-about-me>
+    <app-my-offer [myOffer]="myOffer.en"></app-my-offer>
+    <app-cooperation-terms></app-cooperation-terms>
+    <app-contact [contact]="contact.en"></app-contact>
+    <app-footer></app-footer>
 
- <main class="c-pane" [style.width.px]='width' #pane>
-   <section class="c-content o-wrapper1 u-noselect"
-    [style.margin-left.px]='marginLeft'
-    [@mainFadeAnimation]="'in'">
-     <app-header></app-header>
-     <app-about-me [aboutMe]="aboutMe.pl"></app-about-me>
-     <app-my-offer [myOffer]="myOffer.pl"></app-my-offer>
-     <app-cooperation-terms></app-cooperation-terms>
-     <app-contact [contact]="contact.pl"></app-contact>
-     <app-footer></app-footer>
+    <ng-container *ngIf="isMobileWidth">
+      <a (click)="onChangeLanguageToPl()">
+        <img class="c-grab-move" src="assets/images/svg/polish_click.svg" alt="grab and move">
+      </a>
+    </ng-container>
+  </section>
+</main>
 
+<main class="c-pane" [style.width.px]='width' #pane>
+  <section class="c-content o-wrapper1 u-noselect" [style.margin-left.px]='marginLeft' [@mainFadeAnimation]="'in'">
+    <app-header></app-header>
+    <app-about-me [aboutMe]="aboutMe.pl"></app-about-me>
+    <app-my-offer [myOffer]="myOffer.pl"></app-my-offer>
+    <app-cooperation-terms></app-cooperation-terms>
+    <app-contact [contact]="contact.pl"></app-contact>
+    <app-footer></app-footer>
+
+    <ng-container *ngIf="!isMobileWidth">
       <img class="c-grab-move" src="assets/images/svg/drag_move.svg" alt="grab and move">
       <img class="c-grab-move c-grab-move__icon" src="assets/images/svg/drag_indicator-24px.svg" alt="grab and move">
+    </ng-container>
+    <ng-container *ngIf="isMobileWidth">
+      <a (click)="onChangeLanguageToEn()">
+        <img class="c-grab-move" src="assets/images/svg/english_click.svg" alt="grab and move">
+      </a>
+    </ng-container>
 
-   </section>
+  </section>
 
-   <div class="grabber"></div>
+  <div class="grabber"></div>
 
- </main>
+</main>

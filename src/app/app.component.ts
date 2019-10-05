@@ -38,7 +38,6 @@ import { trigger, transition, state, style, animate } from '@angular/animations'
 })
 export class AppComponent implements OnInit {
 
-  isIntroShown = true;
   isMobileWidth: boolean;
 
   // height = 2000;
@@ -321,9 +320,6 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.resizeWindow(window.innerWidth);
-    setTimeout(() => {
-      this.isIntroShown = false;
-    }, 1500);
   }
 
   @HostListener('window:resize', ['$event'])
@@ -367,7 +363,13 @@ export class AppComponent implements OnInit {
       this.width = 40;
       return;
     }
+  }
 
+  onChangeLanguageToEn() {
+    this.width = 0;
+  }
+  onChangeLanguageToPl() {
+    this.width = window.innerWidth;
   }
 
   private resizeWindow(innerWidth: any): void {
@@ -376,8 +378,10 @@ export class AppComponent implements OnInit {
 
     if (innerWidth <= 1000) {
       this.isMobileWidth = true;
+      this.width = window.innerWidth;
     } else {
       this.isMobileWidth = false;
+      this.width = window.innerWidth - 40;
     }
   }
 
