@@ -73,7 +73,7 @@ export class AppComponent implements OnInit {
       description: `Nazywam się Patryk Białek.
       Jestem specjalistą IT z 20 letnim doświadczeniem. Pracowałem jako Inżynier IT, Specjalista Wsparcia Aplikacji, Analityk Systemowy, Koordynator Zespołu Wsparcia, Projektant UX/UI, Programista UX/Frontend.
 
-      Obecnie obszar mojego zainteresowania to <strong>Projektowanie</strong> oraz <strong>Wytwarzanie</strong> produktów wspierających biznesowe procesy.
+      Obecnie obszar mojego zainteresowania to <strong>Projektowanie</strong> oraz <strong>Wytwarzanie</strong> produktów wspierających biznes.
 
       Zapraszam do współpracy.`
     }
