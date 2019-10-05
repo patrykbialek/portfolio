@@ -41,14 +41,18 @@ export class AppComponent implements OnInit {
   isMobileWidth: boolean;
 
   width = window.innerWidth - 50;
+  widthEN;
+  widthPL;
   marginLeft = 0;
   y = 100;
   oldY = 0;
   oldX = 0;
   grabber = false;
-
+  grabMoveLeft;
   initialInnerWidth = window.innerWidth;
-
+  paddingPL;
+  paddingLeftPL;
+  paddingRightPL;
   isEnLabel = true;
 
   isShown: boolean;
@@ -432,8 +436,16 @@ export class AppComponent implements OnInit {
     }
   };
 
+  constructor() { }
+
   ngOnInit() {
     this.resizeWindow(window.innerWidth);
+    this.setGrabMoveLeft();
+
+    if (this.isMobileWidth) {
+      this.widthPL = window.innerWidth;
+      this.marginLeft = 0;
+    }
   }
 
   @HostListener('window:resize', ['$event'])
@@ -478,17 +490,15 @@ export class AppComponent implements OnInit {
       return;
     }
 
-    if (this.width < this.initialInnerWidth - 300) {
-      this.isEnLabel = false;
-    } else {
-      this.isEnLabel = true;
-    }
+    this.toggleIsEnLabel();
 
     if (this.width >= this.initialInnerWidth - 50) {
       this.isForwardAnimation = true;
     } else {
       this.isForwardAnimation = false;
     }
+
+    this.setGrabMoveLeft();
   }
 
   onChangeLanguageToEn() {
@@ -503,21 +513,62 @@ export class AppComponent implements OnInit {
     this.isShown = true;
     this.isBackAnimation = true;
 
-    if (this.width === this.initialInnerWidth - 50) {
-      this.width = this.initialInnerWidth - 100;
+    if (this.isMobileWidth) {
+
+      if (this.isEnLabel) {
+        this.paddingLeftPL = 0;
+        this.paddingRightPL = 0;
+        this.widthPL = 0;
+        this.widthEN = window.innerWidth;
+        this.width = 0;
+      } else {
+        this.paddingLeftPL = 24;
+        this.paddingRightPL = 24;
+        this.widthEN = 0;
+        this.widthPL = window.innerWidth;
+        this.width = window.innerWidth;
+      }
+      this.isEnLabel = !this.isEnLabel;
+
+    } else {
+      this.paddingLeftPL = 24;
+      this.paddingRightPL = 24;
+
+      if (this.width === this.initialInnerWidth - 50) {
+        this.width = this.initialInnerWidth - 100;
+      }
+
+      setTimeout(() => {
+        this.width = this.initialInnerWidth - 50;
+        this.toggleIsEnLabel();
+      }, 150);
+
+      setTimeout(() => {
+        this.isBackAnimation = false;
+        this.setGrabMoveLeft();
+      }, 500);
     }
+  }
 
-    setTimeout(() => {
-      this.width = this.initialInnerWidth - 50;
-    }, 150);
+  setGrabMoveLeft(): void {
+    this.grabMoveLeft = this.width - 30;
+  }
 
-    setTimeout(() => {
-      this.isBackAnimation = false;
-    }, 500);
+  toggleIsEnLabel(): void {
+    if (this.width < this.initialInnerWidth - 500) {
+      this.isEnLabel = false;
+    } else {
+      this.isEnLabel = true;
+    }
   }
 
   private resizeWindow(innerWidth: any): void {
-    this.marginLeft = ((window.innerWidth - 960) / 2);
+
+    if (this.isMobileWidth) {
+      this.marginLeft = 0;
+    } else {
+      this.marginLeft = ((window.innerWidth - 960) / 2);
+    }
     this.width = window.innerWidth - 50;
     this.initialInnerWidth = window.innerWidth;
 
@@ -528,6 +579,8 @@ export class AppComponent implements OnInit {
       this.isMobileWidth = false;
       this.width = window.innerWidth - 50;
     }
+
+    this.setGrabMoveLeft();
   }
 
 }
