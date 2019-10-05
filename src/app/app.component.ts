@@ -84,7 +84,7 @@ export class AppComponent implements OnInit {
       title: 'Co oferuję',
       offers: [
         {
-          title: 'Zaprojektowanie produktu cyfrowego (UX/UI)',
+          title: 'Projekt produktu cyfrowego (UX/UI)',
           subTitle: 'Proces:',
           image: {
             fileName: 'offer_design',
@@ -113,7 +113,7 @@ export class AppComponent implements OnInit {
             },
             {
               title: 'Zweryfikować',
-              subTitle: 'sprawdzić użyteczność, łatwość nanoszenia zmian, przygotować raport końcowy',
+              subTitle: 'sprawdzić użyteczność, łatwość zmiany, przygotować raport końcowy',
             },
           ],
         },
@@ -127,7 +127,7 @@ export class AppComponent implements OnInit {
           items: [
             {
               title: 'Zrozumieć',
-              subTitle: 'poznać problem, produkt, proces',
+              subTitle: 'poznać problem, produkt, jak wygląda proces',
             },
             {
               title: 'Zbadać',
@@ -183,7 +183,7 @@ export class AppComponent implements OnInit {
       title: 'My offer',
       offers: [
         {
-          title: 'Design of digital product (UX/UI)',
+          title: `Design of digital product (UX/UI)`,
           subTitle: 'Proccess:',
           image: {
             fileName: 'offer_design',
@@ -298,7 +298,7 @@ export class AppComponent implements OnInit {
             title: 'Meetings'
           },
           title: 'Meetings',
-          subTitle: 'Skype or on-site in Warsaw'
+          subTitle: 'Skype meetings or on-site in Warsaw'
         },
         {
           image: {
@@ -383,7 +383,7 @@ export class AppComponent implements OnInit {
             title: 'Remarks'
           },
           title: 'Uwagi',
-          subTitle: 'Od grudnia 2019 rozpoczynam dłuższą współpracę w pełnym wymiarze'
+          subTitle: 'Od grudnia 2019 rozpoczynam współpracę w pełnym wymiarze'
         },
       ]
     }

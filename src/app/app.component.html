@@ -53,4 +53,5 @@
 <div class="c-overlay c-overlay--small" [style.width.px]='width'></div>
 
 <a role="button" class="c-change-lang-trigger u-text-normal u-noselect"
+  [ngClass]="{ 'c-change-lang-trigger--on-mobile': isMobileWidth }"
   (click)="onShowResizeOption()">{{ isEnLabel ? 'EN' : 'PL' }}</a>

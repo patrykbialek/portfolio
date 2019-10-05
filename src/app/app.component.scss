@@ -107,6 +107,14 @@
   top: 173px;
   width: 40px;
   z-index: 1002;
+
+  &--on-mobile {
+    border-radius: 50%;
+    padding: 16px;
+    right: 16px;
+    top: 16px;
+    width: auto;
+  }
 }
 
 .c-overlay {
