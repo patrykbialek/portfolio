@@ -581,7 +581,7 @@ export class AppComponent implements OnInit {
       this.widthMobile = window.innerWidth;
       this.marginLeft = 0;
     } else {
-      this.marginLeft = 240;
+      this.marginLeft = ((window.innerWidth - 960) / 2);
     }
   }
 
