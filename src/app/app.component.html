@@ -9,6 +9,7 @@
 <main class="c-pane c-pane--en">
   <section class="c-content o-wrapper u-noselect"
     [style.margin-left.px]='marginLeft'
+    [style.width.px]='widthMobile'
     [@mainFadeAnimation]="'in'">
     <app-header></app-header>
     <app-about-me [aboutMe]="aboutMe.en"></app-about-me>
@@ -28,6 +29,7 @@
   [style.width.px]='width'>
   <section class="c-content o-wrapper u-noselect"
     [style.margin-left.px]='marginLeft'
+    [style.width.px]='widthMobile'
     [@mainFadeAnimation]="'in'">
     <app-header></app-header>
     <app-about-me [aboutMe]="aboutMe.pl"></app-about-me>

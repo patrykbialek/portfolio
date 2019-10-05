@@ -41,8 +41,7 @@ export class AppComponent implements OnInit {
   isMobileWidth: boolean;
 
   width = window.innerWidth - 50;
-  widthEN;
-  widthPL;
+  widthMobile;
   marginLeft = 0;
   y = 100;
   oldY = 0;
@@ -443,7 +442,7 @@ export class AppComponent implements OnInit {
     this.setGrabMoveLeft();
 
     if (this.isMobileWidth) {
-      this.widthPL = window.innerWidth;
+      this.widthMobile = window.innerWidth;
       this.marginLeft = 0;
     }
   }
@@ -516,16 +515,8 @@ export class AppComponent implements OnInit {
     if (this.isMobileWidth) {
 
       if (this.isEnLabel) {
-        this.paddingLeftPL = 0;
-        this.paddingRightPL = 0;
-        this.widthPL = 0;
-        this.widthEN = window.innerWidth;
         this.width = 0;
       } else {
-        this.paddingLeftPL = 24;
-        this.paddingRightPL = 24;
-        this.widthEN = 0;
-        this.widthPL = window.innerWidth;
         this.width = window.innerWidth;
       }
       this.isEnLabel = !this.isEnLabel;
@@ -581,6 +572,13 @@ export class AppComponent implements OnInit {
     }
 
     this.setGrabMoveLeft();
+
+    if (this.isMobileWidth) {
+      this.widthMobile = window.innerWidth;
+      this.marginLeft = 0;
+    } else {
+      this.marginLeft = 240;
+    }
   }
 
 }
