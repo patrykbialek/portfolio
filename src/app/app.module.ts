@@ -9,6 +9,7 @@ import { CooperationTermsComponent } from './components/cooperation-terms.compon
 import { FooterComponent } from './components/footer.component';
 import { HeaderComponent } from './components/header.component';
 import { MyOfferComponent } from './components/my-offer.component';
+import { GoTopComponent } from './go-top/go-top.component';
 
 @NgModule({
   declarations: [
@@ -18,11 +19,15 @@ import { MyOfferComponent } from './components/my-offer.component';
     CooperationTermsComponent,
     ContactComponent,
     FooterComponent,
+    GoTopComponent,
     HeaderComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+  ],
+  exports: [
+    GoTopComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]

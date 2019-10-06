@@ -1,0 +1,23 @@
+.c-go-top {
+  // bottom: 32px;
+  position: fixed;
+  right: 32px;
+  transform: scale(0);
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  z-index: 3000;
+
+  .c-btn-icon {
+    // background-color: #1565C0;
+    border: solid 1px #1565C0;
+    color: #1565C0;
+  }
+
+  &.is-shown {
+    transform: scale(1);
+
+    .c-btn-icon {
+      background-color: transparent;
+    }
+  }
+}
