@@ -11,6 +11,9 @@
     // background-color: #1565C0;
     border: solid 1px #1565C0;
     color: #1565C0;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
   }
 
   &.is-shown {
