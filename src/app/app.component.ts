@@ -82,7 +82,6 @@ export class AppComponent implements OnInit {
     this.resizeWindow(event.target.innerWidth);
   }
 
-  @HostListener('document:touchmove', ['$event'])
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
     if (!this.grabber) {
@@ -92,13 +91,11 @@ export class AppComponent implements OnInit {
     this.oldX = event.clientX;
   }
 
-  @HostListener('document:touchend', ['$event'])
   @HostListener('document:mouseup', ['$event'])
   onMouseUp(event: MouseEvent) {
     this.grabber = false;
   }
 
-  @HostListener('document:touchstart', ['$event'])
   @HostListener('document:mousedown', ['$event'])
   onMouseDown(event: MouseEvent) {
     this.grabber = true;
