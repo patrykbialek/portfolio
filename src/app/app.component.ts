@@ -66,7 +66,7 @@ export class AppComponent implements OnInit {
 
       Currently, my area of interest is <strong>Design</strong> and <strong>Development</strong> of digital products supporting clients' business processes.
 
-      I invite you to cooperation.`
+      I invite you to cooperate.`
     },
     pl: {
       title: 'O mnie',
@@ -230,7 +230,7 @@ export class AppComponent implements OnInit {
             },
             {
               title: 'Research',
-              subTitle: 'get to know evironment, trends',
+              subTitle: 'get to know environment, trends',
             },
             {
               title: 'Summary',
@@ -289,7 +289,7 @@ export class AppComponent implements OnInit {
             fileName: 'cooperation_work',
             title: 'Work'
           },
-          title: 'Type of work',
+          title: 'Mode of work',
           subTitle: 'Remotely'
         },
         {
@@ -306,7 +306,7 @@ export class AppComponent implements OnInit {
             title: 'Settlement'
           },
           title: 'Form of settlement',
-          subTitle: 'B2B - no VAT invoice'
+          subTitle: 'B2B - invoice without VAT'
         },
         {
           image: {
@@ -318,10 +318,10 @@ export class AppComponent implements OnInit {
         },
         {
           image: {
-            fileName: 'cooperation_availablility',
-            title: 'Availablility'
+            fileName: 'cooperation_availability',
+            title: 'Availability'
           },
-          title: 'Availablility',
+          title: 'Availability',
           subTitle: '20 h / week'
         },
         {
