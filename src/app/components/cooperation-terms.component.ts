@@ -9,7 +9,7 @@ export class CooperationTermsComponent implements OnInit {
 
   isMobileWidth: boolean;
 
-  @Input() cooperationTerms;
+  @Input() formOfCooperation;
 
   ngOnInit() {
     this.resizeWindow(window.innerWidth);
