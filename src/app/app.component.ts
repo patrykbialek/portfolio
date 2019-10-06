@@ -164,12 +164,10 @@ export class AppComponent implements OnInit {
       }, 150);
 
       setTimeout(() => {
+        this.setGrabMoveLeft();
         this.isBackAnimation = false;
       }, 500);
 
-      setTimeout(() => {
-        this.setGrabMoveLeft();
-      }, 150);
     }
   }
 
