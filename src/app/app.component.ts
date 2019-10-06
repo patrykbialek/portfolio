@@ -104,19 +104,16 @@ export class AppComponent implements OnInit {
   }
 
   resizerX(offsetX: number) {
+    this.width += offsetX;
 
-    if (!this.isMobileWidth) {
-      this.width += offsetX;
+    if (this.width > this.initialInnerWidth - 49) {
+      this.width = window.innerWidth - 50;
+      return;
+    }
 
-      if (this.width > this.initialInnerWidth - 49) {
-        this.width = window.innerWidth - 50;
-        return;
-      }
-
-      if (this.width < 39) {
-        this.width = 40;
-        return;
-      }
+    if (this.width < 39) {
+      this.width = 40;
+      return;
     }
 
     if (!this.isMobileWidth) {
@@ -168,8 +165,11 @@ export class AppComponent implements OnInit {
 
       setTimeout(() => {
         this.isBackAnimation = false;
-        this.setGrabMoveLeft();
       }, 500);
+
+      setTimeout(() => {
+        this.setGrabMoveLeft();
+      }, 150);
     }
   }
 

@@ -89,7 +89,7 @@ export const formOfCooperation = {
       },
       {
         image: {
-          fileName: 'cooperation_availablility',
+          fileName: 'cooperation_availability',
           title: 'Availablility'
         },
         title: 'Dostępność',
