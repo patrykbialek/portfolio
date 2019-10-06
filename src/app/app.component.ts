@@ -192,10 +192,17 @@ export class AppComponent implements OnInit {
 
     if (innerWidth <= 1000) {
       this.isMobileWidth = true;
-      this.width = window.innerWidth;
+
+      if (!this.isEnLabel) {
+        this.width = 0;
+      } else {
+        this.width = window.innerWidth;
+      }
     } else {
       this.isMobileWidth = false;
       this.width = window.innerWidth - 50;
+
+      this.onShowResizeOption();
     }
 
     this.setGrabMoveLeft();
