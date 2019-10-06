@@ -8,17 +8,19 @@
   z-index: 3000;
 
   .c-btn-icon {
-    // background-color: #1565C0;
-    border: solid 1px #1565C0;
+    background-color: transparent;
+    align-items: center;
+    // border: solid 1px #1565C0;
     border-radius: 50%;
     color: #1565C0;
     display: flex !important;
-    align-items: center;
+    height: 56px !important;
     justify-content: center;
+    width: 56px !important;
   }
 
   &.is-shown {
-    transform: scale(1);
+    transform: scale(1.5);
 
     .c-btn-icon {
       background-color: transparent;
