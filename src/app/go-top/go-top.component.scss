@@ -22,6 +22,11 @@
     width: 56px !important;
   }
 
+  &.is-desktop {
+    bottom: 24px!important;
+    padding: 0;
+  }
+
   &.is-shown {
     transform: scale(1.5);
 

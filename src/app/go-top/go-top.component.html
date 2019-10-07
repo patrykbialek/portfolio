@@ -1,5 +1,5 @@
 <div class="c-go-top is-shown"
-  [ngClass]="{'is-shown':!isGoTopHidden}"
+  [ngClass]="{ 'is-shown':!isGoTopHidden, 'is-desktop': isDesktopWidth }"
   [style.bottom]="styleBottom">
   <a role="button" class="c-btn-icon1" (click)="gotoTop()">
     <img class="c-btn-fab__icon" src="../../assets/images/svg/keyboard_arrow_up-24px.svg" alt="go top">

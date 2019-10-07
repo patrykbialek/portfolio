@@ -6,12 +6,28 @@ import { Component, HostListener, OnInit } from '@angular/core';
   styleUrls: ['./go-top.component.scss']
 })
 export class GoTopComponent implements OnInit {
+  isDesktopWidth = false;
   isGoTopHidden = true;
   styleBottom = '16px';
 
   constructor() { }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    if (window.innerWidth <= 1000) {
+      this.isDesktopWidth = false;
+    } else {
+      this.isDesktopWidth = true;
+    }
+  }
+
+
   ngOnInit() {
+    if (window.innerWidth <= 1000) {
+      this.isDesktopWidth = false;
+    } else {
+      this.isDesktopWidth = true;
+    }
   }
 
   gotoTop() {
