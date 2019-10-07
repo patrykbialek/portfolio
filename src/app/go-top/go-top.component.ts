@@ -7,7 +7,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class GoTopComponent implements OnInit {
   isGoTopHidden = true;
-  styleBottom = '24px';
+  styleBottom = '16px';
 
   constructor() { }
 
