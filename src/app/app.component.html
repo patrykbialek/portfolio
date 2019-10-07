@@ -1,12 +1,6 @@
-<aside class="" *ngIf="!isMobileWidth" [@asideFadeAnimation]="'in'">
-  <img class="c-background c-background__one u-noselect" src="assets/images/svg/background_1.svg" alt="background1">
-  <img class="c-background c-background__two u-noselect" src="assets/images/svg/background_2.svg" alt="background2">
-  <img class="c-background c-background__three u-noselect" src="assets/images/svg/background_3.svg" alt="background3">
-  <img class="c-background c-background__four u-noselect" src="assets/images/svg/background_4.svg" alt="background4">
-  <img class="c-background c-background__five u-noselect" src="assets/images/svg/background_5.svg" alt="background5">
-</aside>
-
-<main class="c-pane c-pane--en">
+<main class="c-pane c-pane--en background background--en"
+  [ngStyle]="backgroundPosition"
+  [ngClass]="{ 'u-background u-background--en': isBackgroundShown }">
   <section class="c-content o-wrapper u-noselect"
     [style.margin-left.px]='marginLeft'
     [style.width.px]='widthMobile'
@@ -23,11 +17,13 @@
 </main>
 
 <main class="c-pane c-pane--pl"
+  [ngStyle]="backgroundPosition"
   [ngClass]="{ 'c-isShown': isShown,
                'u-forward-animation': isForwardAnimation,
-               'u-back-animation': isBackAnimation }"
+               'u-back-animation': isBackAnimation,
+               'u-background u-background--pl': isBackgroundShown }"
   [style.width.px]='width'>
-  <section class="c-content o-wrapper u-noselect"
+  <section class="c-content o-wrapper u-noselect u-position-relative "
     [style.margin-left.px]='marginLeft'
     [style.width.px]='widthMobile'
     [@mainFadeAnimation]="'in'">
@@ -49,8 +45,8 @@
 
 </main>
 
-<div class="c-overlay" [style.width.px]='width - 25'></div>
-<div class="c-overlay c-overlay--small" [style.width.px]='width'></div>
+<!-- <div class="c-overlay" [style.width.px]='width - 25'></div>
+<div class="c-overlay c-overlay--small" [style.width.px]='width'></div> -->
 
 <a role="button" class="c-change-lang-trigger u-text-normal u-noselect"
   [ngClass]="{ 'c-change-lang-trigger--on-mobile': isMobileWidth }"

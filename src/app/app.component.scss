@@ -146,3 +146,22 @@
   /* Non-prefixed version, currently
                                   supported by Chrome, Opera and Firefox */
 }
+
+.u-background {
+  background: url('../assets/images/svg/background_1.svg'),
+              url('../assets/images/svg/background_2.svg'),
+              url('../assets/images/svg/background_3.svg'),
+              url('../assets/images/svg/background_4.svg'),
+              url('../assets/images/svg/background_5.svg');
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position-y: 0, 500px, 950px, 1500px, 2300px;
+
+  &--en {
+    background-color: #EEEEEE;
+  }
+  &--pl {
+    background-color: #fff;
+  }
+}
+
