@@ -152,16 +152,18 @@
               url('../assets/images/svg/background_2.svg'),
               url('../assets/images/svg/background_3.svg'),
               url('../assets/images/svg/background_4.svg'),
-              url('../assets/images/svg/background_5.svg');
+              url('../assets/images/svg/background_5.svg'),
+              url('../assets/images/svg/drag_indicator-24px.svg');
   background-size: auto;
   background-repeat: no-repeat;
-  background-position-y: 0, 500px, 950px, 1500px, 2300px;
 
   &--en {
     background-color: #EEEEEE;
+    background-position-y: 0, 500px, 950px, 1500px, 2300px;
   }
   &--pl {
     background-color: #fff;
+    background-position-y: 0, 500px, 950px, 1500px, 2300px, 174px;
   }
 }
 

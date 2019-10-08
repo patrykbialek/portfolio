@@ -1,6 +1,6 @@
 <main class="c-pane c-pane--en background background--en"
-  [ngStyle]="backgroundPosition"
-  [ngClass]="{ 'u-background u-background--en': isBackgroundShown }">
+  [ngStyle]="backgroundPositionEN"
+  [ngClass]="{ 'u-background u-background--en': isBackgroundShownEN }">
   <section class="c-content o-wrapper u-noselect"
     [style.margin-left.px]='marginLeft'
     [style.width.px]='widthMobile'
@@ -17,11 +17,12 @@
 </main>
 
 <main class="c-pane c-pane--pl"
-  [ngStyle]="backgroundPosition"
+  [ngStyle]="backgroundPositionPL"
   [ngClass]="{ 'c-isShown': isShown,
                'u-forward-animation': isForwardAnimation,
                'u-back-animation': isBackAnimation,
-               'u-background u-background--pl': isBackgroundShown }"
+               'u-background u-background--pl': isBackgroundShownPL,
+               'c-grab-move-background': !isMobileWidth }"
   [style.width.px]='width'>
   <section class="c-content o-wrapper u-noselect u-position-relative "
     [style.margin-left.px]='marginLeft'
@@ -33,11 +34,11 @@
     <app-cooperation-terms [formOfCooperation]="formOfCooperation.pl"></app-cooperation-terms>
     <app-contact [contact]="contact.pl"></app-contact>
     <app-footer></app-footer>
-
+<!--
     <ng-container *ngIf="!isMobileWidth">
       <img class="c-grab-move c-grab-move__icon" [style.left.px]='grabMoveLeft'
         src="assets/images/svg/drag_indicator-24px.svg" alt="grab and move">
-    </ng-container>
+    </ng-container> -->
 
   </section>
 

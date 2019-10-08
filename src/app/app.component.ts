@@ -65,8 +65,10 @@ export class AppComponent implements OnInit {
   formOfCooperation = content.formOfCooperation;
   myOffer = content.myOffer;
 
-  backgroundPosition;
-  isBackgroundShown = true;
+  backgroundPositionEN;
+  backgroundPositionPL;
+  isBackgroundShownEN = true;
+  isBackgroundShownPL = true;
 
   constructor() { }
 
@@ -83,14 +85,17 @@ export class AppComponent implements OnInit {
   }
 
   setBackgroundImage(): void {
-    this.isBackgroundShown = window.innerWidth >= 1300
+    this.isBackgroundShownEN = window.innerWidth >= 1300
       ? true
       : false;
+    this.isBackgroundShownEN = this.isBackgroundShownEN;
 
     const two = window.innerWidth - 290;
     const four = window.innerWidth - 482;
     const five = window.innerWidth - 386;
-    this.backgroundPosition = { 'background-position-x': `-32px, ${two}px, -32px, ${four}px, ${five}px` };
+    const six = 99.5;
+    this.backgroundPositionEN = { 'background-position-x': `-32px, ${two}px, -32px, ${four}px, ${five}px` };
+    this.backgroundPositionPL = { 'background-position-x': `-32px, ${two}px, -32px, ${four}px, ${five}px, ${six}%` };
   }
 
   @HostListener('window:resize', ['$event'])
