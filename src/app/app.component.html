@@ -1,10 +1,10 @@
 <main class="c-pane c-pane--en background background--en"
+  [@enFadeAnimation]="'en'"
   [ngStyle]="backgroundPositionEN"
   [ngClass]="{ 'u-background u-background--en': isBackgroundShownEN }">
   <section class="c-content o-wrapper u-noselect"
     [style.margin-left.px]="marginLeft"
-    [style.width.px]="widthMobile"
-    [@mainFadeAnimation]="'in'">
+    [style.width.px]="widthMobile">
     <app-header></app-header>
     <app-about-me [aboutMe]="aboutMe.en"></app-about-me>
     <app-my-offer [myOffer]="myOffer.en"></app-my-offer>
@@ -17,6 +17,7 @@
 </main>
 
 <main class="c-pane c-pane--pl"
+  [@plFadeAnimation]="'pl'"
   [@slide]="{ value: activePane, params: { leftIndent: leftIndent, rightIndent: rightIndent, defaultWidth: defaultWidth } }"
   [ngStyle]="backgroundPositionPL"
   [ngClass]="{ 'c-isShown': isShown,
@@ -27,8 +28,7 @@
   [style.width.px]="width">
   <section class="c-content o-wrapper u-noselect u-position-relative "
     [style.margin-left.px]='marginLeft'
-    [style.width.px]='widthMobile'
-    [@mainFadeAnimation]="'in'">
+    [style.width.px]='widthMobile'>
     <app-header></app-header>
     <app-about-me [aboutMe]="aboutMe.pl"></app-about-me>
     <app-my-offer [myOffer]="myOffer.pl"></app-my-offer>

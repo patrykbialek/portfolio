@@ -8,7 +8,7 @@ import * as content from './content-text';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
   animations: [
-    trigger('mainFadeAnimation', [
+    trigger('plFadeAnimation', [
       state('in', style({ opacity: 1 })),
       transition(':enter', [
         style({ opacity: 0 }),
@@ -17,23 +17,14 @@ import * as content from './content-text';
       transition(':leave',
         animate(600, style({ opacity: 0 })))
     ]),
-    trigger('asideFadeAnimation', [
+    trigger('enFadeAnimation', [
       state('in', style({ opacity: 1 })),
       transition(':enter', [
         style({ opacity: 0 }),
-        animate('800ms')
+        animate('800ms 1000ms')
       ]),
       transition(':leave',
-        animate(300, style({ opacity: 0 })))
-    ]),
-    trigger('grow', [
-      transition(':enter', [   // :enter is alias to 'void => *'
-        style({ width: '0' }),
-        animate(500, style({ width: '*' }))
-      ]),
-      transition(':leave', [   // :leave is alias to '* => void'
-        animate(500, style({ width: 0 }))
-      ])
+        animate(600, style({ opacity: 0 })))
     ]),
     trigger('slide', [
       state('left', style({ width: '{{leftIndent}}', }), { params: { leftIndent: '0%' } }),
@@ -91,6 +82,8 @@ export class AppComponent implements OnInit {
   backgroundPositionY = 2;
   top = 263;
 
+  tak;
+
   constructor() { }
 
   ngOnInit() {
@@ -129,7 +122,6 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
-    console.log('resize');
     this.resizeWindow(event.target.innerWidth);
     this.setBackgroundImage();
 
@@ -155,18 +147,18 @@ export class AppComponent implements OnInit {
     }
   }
 
-  @HostListener('document:mousemove', ['$event'])
-  onMouseMove(event: MouseEvent) {
-    console.log('mousemove');
+  // @HostListener('document:mousemove', ['$event'])
+  // onMouseMove(event: MouseEvent) {
+  //   console.log('mousemove');
 
-    if (!this.grabber) {
-      return;
-    }
-    this.resizerX(event.clientX - this.oldX);
-    this.oldX = event.clientX;
+  //   if (!this.grabber) {
+  //     return;
+  //   }
+  //   this.resizerX(event.clientX - this.oldX);
+  //   this.oldX = event.clientX;
 
-    this.right = window.innerWidth - this.width;
-  }
+  //   this.right = window.innerWidth - this.width;
+  // }
 
   // @HostListener('document:mouseup', ['$event'])
   // onMouseUp(event: MouseEvent) {
