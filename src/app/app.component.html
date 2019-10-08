@@ -2,8 +2,8 @@
   [ngStyle]="backgroundPositionEN"
   [ngClass]="{ 'u-background u-background--en': isBackgroundShownEN }">
   <section class="c-content o-wrapper u-noselect"
-    [style.margin-left.px]='marginLeft'
-    [style.width.px]='widthMobile'
+    [style.margin-left.px]="marginLeft"
+    [style.width.px]="widthMobile"
     [@mainFadeAnimation]="'in'">
     <app-header></app-header>
     <app-about-me [aboutMe]="aboutMe.en"></app-about-me>
@@ -17,14 +17,14 @@
 </main>
 
 <main class="c-pane c-pane--pl"
-  [@slide]="{ value: activePane, params: { leftIndent: leftIndent, rightIndent: rightIndent } }"
+  [@slide]="{ value: activePane, params: { leftIndent: leftIndent, rightIndent: rightIndent, defaultWidth: defaultWidth } }"
   [ngStyle]="backgroundPositionPL"
   [ngClass]="{ 'c-isShown': isShown,
                'u-forward-animation': isForwardAnimation,
                'u-back-animation': isBackAnimation,
                'u-background u-background--pl': isBackgroundShownPL,
                'c-grab-move-background': !isMobileWidth }"
-  [style.width.px]='width'>
+  [style.width.px]="width">
   <section class="c-content o-wrapper u-noselect u-position-relative "
     [style.margin-left.px]='marginLeft'
     [style.width.px]='widthMobile'
@@ -38,11 +38,11 @@
 
   </section>
 
-  <div class="c-grabber"
+  <!-- <div class="c-grabber"
   *ngIf="!isMobileWidth"
   [style.top.px]="top"
   [style.right.px]="right"
-  [style.background-position-y.px]="backgroundPositionY"></div>
+  [style.background-position-y.px]="backgroundPositionY"></div> -->
 
 </main>
 

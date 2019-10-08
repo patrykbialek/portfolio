@@ -38,6 +38,7 @@ import * as content from './content-text';
     trigger('slide', [
       state('left', style({ width: '{{leftIndent}}', }), { params: { leftIndent: '0%' } }),
       state('right', style({ width: '{{rightIndent}}', }), { params: { rightIndent: '100%' } }),
+      state('default', style({ width: '{{defaultWidth}}', }), { params: { defaultWidth: '0' } }),
       transition('* => *', animate('600ms cubic-bezier(0.35, 0, 0.25, 1)'))
     ]),
     // trigger('slideGrabber', [
@@ -53,6 +54,7 @@ export class AppComponent implements OnInit {
 
   leftIndent;
   rightIndent;
+  defaultWidth = `${window.innerWidth - 50}px`;
 
   isMobileWidth: boolean;
 
@@ -127,6 +129,7 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize(event) {
+    console.log('resize');
     this.resizeWindow(event.target.innerWidth);
     this.setBackgroundImage();
 
@@ -143,7 +146,8 @@ export class AppComponent implements OnInit {
       setTimeout(() => {
         this.right = window.innerWidth - 50;
       }, 500);
-    } else {
+    }
+    if (this.activePane === 'right') {
       this.right = window.innerWidth + 50;
       setTimeout(() => {
         this.right = 50;
@@ -153,6 +157,8 @@ export class AppComponent implements OnInit {
 
   @HostListener('document:mousemove', ['$event'])
   onMouseMove(event: MouseEvent) {
+    console.log('mousemove');
+
     if (!this.grabber) {
       return;
     }
@@ -162,17 +168,21 @@ export class AppComponent implements OnInit {
     this.right = window.innerWidth - this.width;
   }
 
-  @HostListener('document:mouseup', ['$event'])
-  onMouseUp(event: MouseEvent) {
-    this.grabber = false;
-  }
+  // @HostListener('document:mouseup', ['$event'])
+  // onMouseUp(event: MouseEvent) {
+  //   console.log('mouseup');
 
-  @HostListener('document:mousedown', ['$event'])
-  onMouseDown(event: MouseEvent) {
-    this.grabber = true;
-    this.oldY = event.clientY;
-    this.oldX = event.clientX;
-  }
+  //   this.grabber = false;
+  // }
+
+  // @HostListener('document:mousedown', ['$event'])
+  // onMouseDown(event: MouseEvent) {
+  //   console.log('mousedown');
+
+  //   this.grabber = true;
+  //   this.oldY = event.clientY;
+  //   this.oldX = event.clientX;
+  // }
 
   resizerX(offsetX: number) {
     this.width += offsetX;
@@ -197,11 +207,7 @@ export class AppComponent implements OnInit {
       this.isForwardAnimation = false;
     }
 
-    if (this.width < this.initialInnerWidth - 50) {
-      this.isEnLabel = false;
-    }
-
-    this.setGrabMoveLeft();
+    this.activePane = '';
   }
 
   onChangeLanguageToEn() {
@@ -240,7 +246,8 @@ export class AppComponent implements OnInit {
         setTimeout(() => {
           this.right = window.innerWidth - 50;
         }, 500);
-      } else {
+      }
+      if (this.activePane === 'right') {
         this.right = window.innerWidth + 50;
         setTimeout(() => {
           this.right = 50;
@@ -285,15 +292,15 @@ export class AppComponent implements OnInit {
   }
 
   setGrabMoveLeft(): void {
-    this.grabMoveLeft = this.width - 30;
+    // this.grabMoveLeft = this.width - 30;
   }
 
   toggleIsEnLabel(): void {
-    if (this.width < this.initialInnerWidth - 500) {
-      this.isEnLabel = false;
-    } else {
-      this.isEnLabel = true;
-    }
+    // if (this.width < this.initialInnerWidth - 500) {
+    //   this.isEnLabel = false;
+    // } else {
+    //   this.isEnLabel = true;
+    // }
   }
 
   private resizeWindow(innerWidth: any): void {
@@ -312,18 +319,20 @@ export class AppComponent implements OnInit {
     } else {
       this.isMobileWidth = false;
       this.width = window.innerWidth - 50;
-
-      // this.onShowResizeOption();
     }
-
-    this.setGrabMoveLeft();
 
     if (this.isMobileWidth) {
       this.widthMobile = window.innerWidth;
       this.marginLeft = 0;
     } else {
+      this.widthMobile = window.innerWidth;
       this.marginLeft = ((window.innerWidth - 960) / 2);
     }
   }
 
+
+  tt() {
+    // this.activePane = 'default';
+    // this.defaultWidth = `${this.width}px`;
+  }
 }
