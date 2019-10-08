@@ -68,29 +68,43 @@
     background: #fafafa;
     box-shadow: rgb(136, 136, 136) 5px 0px 5px -5px;
     width: 90%;
+
+    // &:after {
+    //   content: "";
+    //   background-image: url('../assets/images/svg/drag_indicator-24px.svg');
+    //   background-size: 24px 24px;
+    //   height: 24px;
+    //   width: 24px;
+    //   position: fixed;
+    //   top: 264px;
+    //   right: 65px;
+    //   display: block;
+    // }
   }
 }
 
 .u-forward-animation {
-  transition: width 50ms ease-in-out;
+  // transition: width 50ms ease-in-out;
 }
 
 .u-back-animation {
-  transition: width 800ms cubic-bezier(0.4, 0.0, 0.2, 1);
+  // transition: width 800ms cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .c-grabber {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 30px;
-  overflow: hidden;
-  background-image: url('https://cdn.sstatic.net/Sites/stackoverflow/img/sprites.svg'), none;
-  background-position: 210px -364px;
-  background-size: initial;
+  background: url('../assets/images/svg/drag_indicator-24px.svg');
+  background-size: auto;
   background-repeat: no-repeat;
+  background-position-x: 2px;
+  background-position-y: 264px;
+  // background-color: red;
+  width: 30px;
+  cursor: ew-resize;
+  height: 26px;
+  display: block;
+  right: 50px;
+  top: 263px;
+  position: fixed;
 }
 
 .c-grab-move {
@@ -104,7 +118,7 @@
   color: #1565C0;
   position: fixed;
   right: 0;
-  top: 173px;
+  top: 264px;
   width: 38px;
   z-index: 1002;
 
@@ -152,8 +166,7 @@
               url('../assets/images/svg/background_2.svg'),
               url('../assets/images/svg/background_3.svg'),
               url('../assets/images/svg/background_4.svg'),
-              url('../assets/images/svg/background_5.svg'),
-              url('../assets/images/svg/drag_indicator-24px.svg');
+              url('../assets/images/svg/background_5.svg');
   background-size: auto;
   background-repeat: no-repeat;
 
@@ -163,7 +176,7 @@
   }
   &--pl {
     background-color: #fff;
-    background-position-y: 0, 500px, 950px, 1500px, 2300px, 174px;
+    background-position-y: 0, 500px, 950px, 1500px, 2300px;
   }
 }
 

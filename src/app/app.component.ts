@@ -35,9 +35,24 @@ import * as content from './content-text';
         animate(500, style({ width: 0 }))
       ])
     ]),
+    trigger('slide', [
+      state('left', style({ width: '{{leftIndent}}', }), { params: { leftIndent: '0%' } }),
+      state('right', style({ width: '{{rightIndent}}', }), { params: { rightIndent: '100%' } }),
+      transition('* => *', animate('600ms cubic-bezier(0.35, 0, 0.25, 1)'))
+    ]),
+    // trigger('slideGrabber', [
+    //   state('left', style({ transform: 'translateX(-1300px)' })),
+    //   state('right', style({ transform: 'translateX(0)' })),
+    //   transition('* => *', animate('600ms cubic-bezier(0.35, 0, 0.25, 1)'))
+    // ]),
   ]
 })
 export class AppComponent implements OnInit {
+  activePane = 'right';
+  isManualMove = false;
+
+  leftIndent;
+  rightIndent;
 
   isMobileWidth: boolean;
 
@@ -70,6 +85,10 @@ export class AppComponent implements OnInit {
   isBackgroundShownEN = true;
   isBackgroundShownPL = true;
 
+  right = 50;
+  backgroundPositionY = 2;
+  top = 263;
+
   constructor() { }
 
   ngOnInit() {
@@ -82,13 +101,21 @@ export class AppComponent implements OnInit {
       this.widthMobile = window.innerWidth;
       this.marginLeft = 0;
     }
+
+    if (innerWidth <= 1000) {
+      this.leftIndent = `0`;
+      this.rightIndent = `100%`;
+    } else {
+      this.leftIndent = `${50}px`;
+      this.rightIndent = `${window.innerWidth - 50}px`;
+    }
   }
 
   setBackgroundImage(): void {
     this.isBackgroundShownEN = window.innerWidth >= 1300
       ? true
       : false;
-    this.isBackgroundShownEN = this.isBackgroundShownEN;
+    this.isBackgroundShownPL = this.isBackgroundShownEN;
 
     const two = window.innerWidth - 290;
     const four = window.innerWidth - 482;
@@ -102,6 +129,26 @@ export class AppComponent implements OnInit {
   onResize(event) {
     this.resizeWindow(event.target.innerWidth);
     this.setBackgroundImage();
+
+    if (innerWidth <= 1000) {
+      this.leftIndent = `0`;
+      this.rightIndent = `100%`;
+    } else {
+      this.leftIndent = `${50}px`;
+      this.rightIndent = `${window.innerWidth - 50}px`;
+    }
+
+    if (this.activePane === 'left') {
+      this.right = -50;
+      setTimeout(() => {
+        this.right = window.innerWidth - 50;
+      }, 500);
+    } else {
+      this.right = window.innerWidth + 50;
+      setTimeout(() => {
+        this.right = 50;
+      }, 500);
+    }
   }
 
   @HostListener('document:mousemove', ['$event'])
@@ -111,6 +158,8 @@ export class AppComponent implements OnInit {
     }
     this.resizerX(event.clientX - this.oldX);
     this.oldX = event.clientX;
+
+    this.right = window.innerWidth - this.width;
   }
 
   @HostListener('document:mouseup', ['$event'])
@@ -134,7 +183,7 @@ export class AppComponent implements OnInit {
     }
 
     if (this.width < 39) {
-      this.width = 40;
+      this.width = 50;
       return;
     }
 
@@ -146,6 +195,10 @@ export class AppComponent implements OnInit {
       this.isForwardAnimation = true;
     } else {
       this.isForwardAnimation = false;
+    }
+
+    if (this.width < this.initialInnerWidth - 50) {
+      this.isEnLabel = false;
     }
 
     this.setGrabMoveLeft();
@@ -163,6 +216,10 @@ export class AppComponent implements OnInit {
     this.isShown = true;
     this.isBackAnimation = true;
 
+    this.isManualMove = false;
+
+    this.activePane = this.activePane === 'left' ? 'right' : 'left';
+
     if (this.isMobileWidth) {
 
       if (this.isEnLabel) {
@@ -176,19 +233,53 @@ export class AppComponent implements OnInit {
       this.paddingLeftPL = 24;
       this.paddingRightPL = 24;
 
-      if (this.width === this.initialInnerWidth - 50) {
-        this.width = this.initialInnerWidth - 100;
+      this.isEnLabel = !this.isEnLabel;
+
+      if (this.activePane === 'left') {
+        this.right = -50;
+        setTimeout(() => {
+          this.right = window.innerWidth - 50;
+        }, 500);
+      } else {
+        this.right = window.innerWidth + 50;
+        setTimeout(() => {
+          this.right = 50;
+        }, 500);
       }
 
-      setTimeout(() => {
-        this.width = this.initialInnerWidth - 50;
-        this.toggleIsEnLabel();
-      }, 150);
+      // this.activePane = '';
 
-      setTimeout(() => {
-        this.setGrabMoveLeft();
-        this.isBackAnimation = false;
-      }, 500);
+      // if (this.width < this.initialInnerWidth - 50) {
+      //   this.activePane = 'left';
+      // } else {
+      // }
+
+      // if (this.width === this.initialInnerWidth - 50) {
+      //   this.activePane = 'left';
+      // }
+
+
+      // console.log('pl', this.width, this.initialInnerWidth)
+      // if ((this.width === 50 && this.isEnLabel) || this.width < this.initialInnerWidth - 50 && this.isEnLabel) {
+      //   console.log('pl', this.width, this.initialInnerWidth)
+      //   this.width = this.initialInnerWidth - 50;
+      //   // this.isBackAnimation = false;
+      // }
+
+      // if (this.width === this.initialInnerWidth - 50 && !this.isEnLabel) {
+      //   console.log('en', this.width, this.initialInnerWidth)
+      //   this.width = 50;
+      // }
+
+      // setTimeout(() => {
+      //   this.width = this.initialInnerWidth - 50;
+      //   this.toggleIsEnLabel();
+      // }, 150);
+
+      // setTimeout(() => {
+      //   this.setGrabMoveLeft();
+      //   this.isBackAnimation = false;
+      // }, 500);
 
     }
   }
@@ -222,7 +313,7 @@ export class AppComponent implements OnInit {
       this.isMobileWidth = false;
       this.width = window.innerWidth - 50;
 
-      this.onShowResizeOption();
+      // this.onShowResizeOption();
     }
 
     this.setGrabMoveLeft();

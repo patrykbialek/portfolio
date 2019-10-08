@@ -17,6 +17,7 @@
 </main>
 
 <main class="c-pane c-pane--pl"
+  [@slide]="{ value: activePane, params: { leftIndent: leftIndent, rightIndent: rightIndent } }"
   [ngStyle]="backgroundPositionPL"
   [ngClass]="{ 'c-isShown': isShown,
                'u-forward-animation': isForwardAnimation,
@@ -34,15 +35,14 @@
     <app-cooperation-terms [formOfCooperation]="formOfCooperation.pl"></app-cooperation-terms>
     <app-contact [contact]="contact.pl"></app-contact>
     <app-footer></app-footer>
-<!--
-    <ng-container *ngIf="!isMobileWidth">
-      <img class="c-grab-move c-grab-move__icon" [style.left.px]='grabMoveLeft'
-        src="assets/images/svg/drag_indicator-24px.svg" alt="grab and move">
-    </ng-container> -->
 
   </section>
 
-  <div class="c-grabber"></div>
+  <div class="c-grabber"
+  *ngIf="!isMobileWidth"
+  [style.top.px]="top"
+  [style.right.px]="right"
+  [style.background-position-y.px]="backgroundPositionY"></div>
 
 </main>
 
