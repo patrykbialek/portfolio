@@ -9,7 +9,7 @@
     <path id="Path_157" data-name="Path 157" d="M1680.577,176.476l-32.022,55.93,32.1,56.022,64.033.047,31.866-56.064-31.967-55.928Z" transform="translate(-976.554 207.524)" fill="none" stroke="#e0e0e0" stroke-linejoin="round" stroke-width="1"/>
     <g id="Group_385" data-name="Group 385" transform="translate(96 -56)" opacity="0.45">
       <path id="Path_146" data-name="Path 146" d="M1680.577,176.476l-32.022,55.93,32.1,56.022,64.033.047,31.866-56.064-31.967-55.928Z" transform="translate(-1264.554 375.524)" fill="none" stroke="#1976d2" stroke-linejoin="round" stroke-width="1"/>
-      <text id="DEV" transform="translate(448 621)" fill="#1976d2" font-size="32" font-family="Roboto-Regular, Roboto"><tspan x="-30.008" y="0">DEV</tspan></text>
+      <text id="DEV" transform="translate(448 621)" fill="#1976d2" font-size="32" font-family="Lato, Roboto"><tspan x="-30.008" y="0">DEV</tspan></text>
     </g>
   </g>
 </svg>
