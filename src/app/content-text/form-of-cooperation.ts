@@ -16,7 +16,7 @@ export const formOfCooperation = {
           title: 'Meetings'
         },
         title: 'Meetings',
-        subTitle: 'Skype meetings or on-site in Warsaw'
+        subTitle: 'Online meetings or on-site in Warsaw'
       },
       {
         image: {
@@ -24,7 +24,7 @@ export const formOfCooperation = {
           title: 'Settlement'
         },
         title: 'Form of settlement',
-        subTitle: 'B2B - invoice without VAT'
+        subTitle: 'B2B - VAT invoice'
       },
       {
         image: {
@@ -32,7 +32,7 @@ export const formOfCooperation = {
           title: 'Rate'
         },
         title: 'Rate',
-        subTitle: 'From 120 PLN / h'
+        subTitle: 'From 120 PLN (net) / h'
       },
       {
         image: {
@@ -48,7 +48,7 @@ export const formOfCooperation = {
           title: 'Remarks'
         },
         title: 'Remarks',
-        subTitle: 'From December 2019, I start a full-time long-term cooperation'
+        subTitle: 'I am accepting new projects for Q1 2021'
       },
     ]
   },
@@ -69,7 +69,7 @@ export const formOfCooperation = {
           title: 'Meetings'
         },
         title: 'Spotkania',
-        subTitle: 'Skype lub osobiście na terenie Warszawy'
+        subTitle: 'Online lub osobiście na terenie Warszawy'
       },
       {
         image: {
@@ -77,7 +77,7 @@ export const formOfCooperation = {
           title: 'Settlement'
         },
         title: 'Forma rozliczenia',
-        subTitle: 'B2B - faktura bez VAT'
+        subTitle: 'B2B - faktura VAT'
       },
       {
         image: {
@@ -85,7 +85,7 @@ export const formOfCooperation = {
           title: 'Rate'
         },
         title: 'Stawka',
-        subTitle: 'Od 120 PLN / h'
+        subTitle: 'Od 120 PLN (netto) / h'
       },
       {
         image: {
@@ -101,7 +101,7 @@ export const formOfCooperation = {
           title: 'Remarks'
         },
         title: 'Uwagi',
-        subTitle: 'Od grudnia 2019 rozpoczynam współpracę w pełnym wymiarze'
+        subTitle: 'Przyjmuję nowe zlecenia na Q1 2021'
       },
     ]
   }

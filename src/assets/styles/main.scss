@@ -4,8 +4,7 @@
  *
  */
 
-@import 'mds-styles.css';
-
+@import "mds-styles.css";
 
 /**
  *
@@ -13,17 +12,20 @@
  *
  */
 
-
 /**
  *
  * Custom application styles
  *
  */
 
-
 html,
 body {
   height: 100%;
+  font-family: "Baloo 2", cursive;
+  font-size: 0.700em;
+  line-height: 1.6;
+  overflow-y: scroll;
+  min-height: 100%;
 }
 
 button,
@@ -31,11 +33,10 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: Roboto, Lato, sans-serif;
+  // font-family: Roboto, Lato, sans-serif;
+  font-family: "Baloo 2", cursive;
   margin: 0;
 }
-
-
 
 .c-btn {
   transition: 0s;
@@ -46,7 +47,7 @@ textarea {
 
 .c-module-title {
   font-weight: normal;
-  color: #1565C0;
+  color: #1565c0;
 }
 
 .c-section-title {
@@ -86,9 +87,6 @@ textarea {
     font-size: 1.6rem;
   }
 }
-
-
-
 
 // Pagination
 .c-pagination {
@@ -142,13 +140,10 @@ textarea {
   margin-right: 14px;
 }
 
-
-
 // Main content
 .c-main-content {
   // padding-top: 152px;
 }
-
 
 // Add-on
 .c-text-field__add-on {
@@ -168,7 +163,6 @@ textarea {
   display: none;
 }
 
-
 .c-btn[disabled] {
   background-color: #e0e0e0;
   border: 1px solid #e0e0e0;
@@ -182,16 +176,14 @@ p {
   word-break: break-all;
 }
 
-
 .c-messages-and-actions-bar {
-  background-color: #F5F5F5;
-  border-radius: .3rem;
+  background-color: #f5f5f5;
+  border-radius: 0.3rem;
 }
 
-.o-grid--auto>.o-grid__cell {
+.o-grid--auto > .o-grid__cell {
   flex: 1 0 0%;
 }
-
 
 // TODO: move to main code base
 .c-text-field__helper-container {
@@ -207,7 +199,6 @@ p {
     }
   }
 }
-
 
 // Patient arrived
 
@@ -242,7 +233,6 @@ p {
   }
 }
 
-
 // .c-footer {
 //   background-color: rgba(0, 0, 0, .4);
 //   bottom: 0;
@@ -265,8 +255,6 @@ p {
   }
 }
 
-
-
 // Inline message
 .c-messages-and-actions-bar {
   &__content {
@@ -281,7 +269,7 @@ p {
 
     .c-save-message__icon {
       align-items: center;
-      border-radius: .3rem 0 0 .3rem;
+      border-radius: 0.3rem 0 0 0.3rem;
       color: #fff;
       display: inline-flex;
       height: 64px;
@@ -304,17 +292,16 @@ p {
 
   &--info {
     .c-save-message__icon {
-      background-color: #2196F3;
+      background-color: #2196f3;
     }
   }
 
   &--error {
     .c-save-message__icon {
-      background-color: #F44336;
+      background-color: #f44336;
     }
   }
 }
-
 
 // Utilities
 
@@ -357,7 +344,6 @@ p {
   }
 }
 
-
 .u-opacity {
   &-0 {
     opacity: 0 !important;
@@ -392,7 +378,6 @@ p {
   }
 }
 
-
 .c-btn-icon--info {
   &:hover {
     background-color: transparent;
@@ -401,15 +386,14 @@ p {
 }
 
 .u-background-gray-50 {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
-
 
 .c-text-field--readonly {
   .c-text-field__input {
     background-color: transparent;
-    border: 1px solid rgba(0, 0, 0, .06);
-    border-radius: .3rem;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    border-radius: 0.3rem;
     color: #424242;
     font-size: 16px;
     height: 42px;
@@ -417,7 +401,7 @@ p {
     order: 2;
     padding: 8px;
     resize: vertical;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     width: 100%;
   }
 
@@ -446,7 +430,6 @@ p {
   }
 }
 
-
 .o-block--right {
   text-align: right !important;
 }
@@ -472,7 +455,6 @@ p {
     height: 10rem !important;
   }
 }
-
 
 .c-text-field--add-on {
   position: relative;
@@ -504,17 +486,16 @@ p {
   max-height: 350px !important;
 }
 
-
 .u-display-inline {
   display: inline-block !important;
 }
 
 .mat-calendar-body-cell-content {
-  border-radius: .3rem !important;
+  border-radius: 0.3rem !important;
 }
 
 .mat-calendar-body-selected {
-  background-color: #1565C0 !important;
+  background-color: #1565c0 !important;
 }
 
 p {
@@ -542,7 +523,6 @@ p {
   line-height: 1.5;
 }
 
-
 .c-section {
   &__header {
     position: relative;
@@ -559,8 +539,8 @@ p {
     &:after {
       content: "";
       bottom: -8px;
-      border: solid 2px #1976D2;
-      border-radius: .3rem;
+      border: solid 2px #1976d2;
+      border-radius: 0.3rem;
       display: block;
       left: 1px;
       position: absolute;
@@ -577,5 +557,5 @@ p {
 }
 
 .u-text-color-black {
-  color: #000!important;
+  color: #000 !important;
 }

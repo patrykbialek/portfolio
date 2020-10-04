@@ -16,7 +16,7 @@ export const   contact = {
         title: 'Phone'
       },
       title: 'Telefon',
-      subTitle: '+48 510 217 852',
+      subTitle: '+48 690 339 889',
       type: 'phone'
     }]
   },
@@ -38,7 +38,7 @@ export const   contact = {
           title: 'Phone'
         },
         title: 'Phone',
-        subTitle: '+48 510 217 852',
+        subTitle: '+48 690 339 889',
         type: 'phone'
       }],
   }
