@@ -16,7 +16,7 @@ export const myOffer = {
           },
           {
             title: 'Zbadać',
-            subTitle: 'poznać środowisko, konkurencję, trendy',
+            subTitle: 'poznać środowisko, konkurencję, trendy na rynku',
           },
           {
             title: 'Naszkicować',
@@ -50,7 +50,7 @@ export const myOffer = {
           },
           {
             title: 'Zbadać',
-            subTitle: 'poznać środowisko, trendy',
+            subTitle: 'poznać środowisko, trendy na rynku',
           },
           {
             title: 'Podsumować',
