@@ -8,7 +8,7 @@
     <path id="Path_143" data-name="Path 143" d="M1680.577,176.476l-32.022,55.93,32.1,56.022,64.033.047,31.866-56.064-31.967-55.928Z" transform="translate(-1080.554 31.524)" fill="none" stroke="#e0e0e0" stroke-linejoin="round" stroke-width="1"/>
     <g id="Group_386" data-name="Group 386" opacity="0.45">
       <path id="Path_141" data-name="Path 141" d="M1680.577,176.476l-32.022,55.93,32.1,56.022,64.033.047,31.866-56.064-31.967-55.928Z" transform="translate(-1080.554 143.524)" fill="none" stroke="#f44336" stroke-linejoin="round" stroke-width="1"/>
-      <text id="UX" transform="translate(632 389)" fill="#f44336" font-size="32" font-family="Lato, Roboto"><tspan x="-20.945" y="0">UX</tspan></text>
+      <text id="UX" transform="translate(632 389)" fill="#f44336" font-size="32" font-family="Roboto-Regular, Roboto"><tspan x="-20.945" y="0">UX</tspan></text>
     </g>
   </g>
 </svg>

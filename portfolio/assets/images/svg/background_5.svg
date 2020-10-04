@@ -7,7 +7,7 @@
     <path id="Path_158" data-name="Path 158" d="M1680.577,176.476l-32.022,55.93,32.1,56.022,64.033.047,31.866-56.064-31.967-55.928Z" transform="translate(-528.554 439.524)" fill="none" stroke="#e0e0e0" stroke-linejoin="round" stroke-width="1"/>
     <g id="Group_387" data-name="Group 387" opacity="0.45">
       <path id="Path_154" data-name="Path 154" d="M1680.577,176.476l-32.022,55.93,32.1,56.022,64.033.047,31.866-56.064-31.967-55.928Z" transform="translate(-720.554 439.524)" fill="none" stroke="#ff9800" stroke-linejoin="round" stroke-width="1"/>
-      <text id="B2B" transform="translate(992 685)" fill="#ff9800" font-size="32" font-family="Lato, Roboto"><tspan x="-29.461" y="0">B2B</tspan></text>
+      <text id="B2B" transform="translate(992 685)" fill="#ff9800" font-size="32" font-family="Roboto-Regular, Roboto"><tspan x="-29.461" y="0">B2B</tspan></text>
     </g>
   </g>
 </svg>

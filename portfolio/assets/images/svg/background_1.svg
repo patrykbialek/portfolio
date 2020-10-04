@@ -11,7 +11,7 @@
     <path id="Path_129" data-name="Path 129" d="M1680.577,176.476l-32.022,55.93,32.1,56.022,64.033.047,31.866-56.064-31.967-55.928Z" transform="translate(-1648.554 175.524)" fill="none" stroke="#e0e0e0" stroke-linejoin="round" stroke-width="1"/>
     <g id="Group_383" data-name="Group 383" opacity="0.45">
       <path id="Path_120" data-name="Path 120" d="M1680.577,176.476l-32.022,55.93,32.1,56.022,64.033.047,31.866-56.064-31.967-55.928Z" transform="translate(-1552.554 -104.476)" fill="none" stroke="#522da8" stroke-linejoin="round" stroke-width="1"/>
-      <text id="IT" transform="translate(160 141)" fill="#522da8" font-size="32" font-weight="normal" font-family="Lato, Roboto"><tspan x="-13.672" y="0">IT</tspan></text>
+      <text id="IT" transform="translate(160 141)" fill="#522da8" font-size="32" font-family="Roboto-Regular, Roboto"><tspan x="-13.672" y="0">IT</tspan></text>
     </g>
   </g>
 </svg>
