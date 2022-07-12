@@ -9,7 +9,7 @@
     <path id="Path_136" data-name="Path 136" d="M1680.577,176.476l-32.022,55.93,32.1,56.022,64.033.047,31.866-56.064-31.967-55.928Z" transform="translate(-720.554 143.524)" fill="none" stroke="#e0e0e0" stroke-linejoin="round" stroke-width="1"/>
     <g id="Group_384" data-name="Group 384" opacity="0.45">
       <path id="Path_131" data-name="Path 131" d="M1680.577,176.476l-32.022,55.93,32.1,56.022,64.033.047,31.866-56.064-31.967-55.928Z" transform="translate(-816.554 87.524)" fill="none" stroke="#4caf50" stroke-linejoin="round" stroke-width="1"/>
-      <text id="UI" transform="translate(896 333)" fill="#4caf50" font-size="32" font-family="Roboto-Regular, Roboto"><tspan x="-15.352" y="0">UI</tspan></text>
+      <text id="UI" transform="translate(896 333)" fill="#4caf50" font-size="32" font-family='"Baloo 2", cursive'><tspan x="-15.352" y="0">UI</tspan></text>
     </g>
   </g>
 </svg>
